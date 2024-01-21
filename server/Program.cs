@@ -20,6 +20,9 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 
+app.MapGet("/", ()=>"hello world!");
+
+
 app.MapGet("/items", async (ToDoListContext db) =>
     await db.Items.ToListAsync());
 
